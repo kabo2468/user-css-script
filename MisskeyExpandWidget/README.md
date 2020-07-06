@@ -14,7 +14,7 @@ Stylusをインストールしてから下のリンクをクリックしてく�
 [Chrome](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=ja)  
 [Firefox](https://addons.mozilla.org/ja/firefox/addon/styl-us/)
 
-## インストール
+## [インストール](https://github.com/kabo2468/usercss/raw/master/MisskeyExpandWidget/mewcss.user.css)
 
 ### 後ですること
 
