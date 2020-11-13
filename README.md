@@ -1,2 +1,2 @@
-# usercss
-UserCSS 置き場
+# user-css-script
+UserCSS, UserScript 置き場
