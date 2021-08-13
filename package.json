@@ -1,16 +1,14 @@
 {
-  "name": "dlsite-wishlist-tool",
+  "name": "user-css-script",
   "version": "1.0.0",
   "description": "",
-  "main": "built/dlsite-wishlist-tool.user.js",
   "scripts": {
-    "dev": "webpack --mode=development --config webpack.config.dev.ts",
     "clean": "rimraf built/*",
-    "webpack": "webpack --mode=production --config webpack.config.prod.ts",
+    "dwtujs:build": "webpack --env name=DLsite-Wishlist-Tool",
+    "dwtujs:dev": "npm run dwtujs:build -- --env dev",
+    "dwtujs:watch": "npm run dwtujs:build -- --watch --env dev",
     "tsc:check": "tsc --noEmit",
-    "build": "npm run clean && npm run webpack",
-    "lint": "eslint . --ext .ts",
-    "watch": "webpack --watch --mode=development --config webpack.config.dev.ts"
+    "lint": "eslint . --ext .ts"
   },
   "keywords": [],
   "author": "",

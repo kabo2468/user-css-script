@@ -1,32 +1,45 @@
+import { Configuration } from 'webpack';
 import WebpackUserScript from 'webpack-userscript';
 
-export const config = {
-    context: __dirname,
-    cache: true,
-    entry: './src/index.ts',
-    output: {
-        filename: 'dlsite-wishlist-tool-dev.js',
-        path: `${__dirname}/built`,
-    },
-    module: {
-        rules: [
-            {
-                test: /\.ts$/,
-                loader: 'esbuild-loader',
-                exclude: /node_modules/,
-                options: {
-                    loader: 'ts',
-                    // target: 'ES2019',
+const config = (env: { dev: boolean; name: string }): Configuration => {
+    const isDevMode = env.dev || false;
+    const name = env.name;
+    if (!name) {
+        console.error('name is required!');
+        process.exit(1);
+    }
+    return {
+        context: __dirname,
+        mode: isDevMode ? 'development' : 'production',
+        devtool: isDevMode ? 'source-map' : false,
+        cache: true,
+        entry: `./src/${name}/index.ts`,
+        output: {
+            filename: `${name.toLowerCase()}${isDevMode ? '-dev' : ''}.js`,
+            path: `${__dirname}/built/${name}`,
+        },
+        module: {
+            rules: [
+                {
+                    test: /\.ts$/,
+                    loader: 'esbuild-loader',
+                    exclude: /node_modules/,
+                    options: {
+                        loader: 'ts',
+                        // target: 'ES2019',
+                    },
                 },
-            },
+            ],
+        },
+        plugins: [
+            new WebpackUserScript({
+                headers: `./src/${name}/meta.json`,
+            }),
         ],
-    },
-    plugins: [
-        new WebpackUserScript({
-            headers: './meta.json',
-        }),
-    ],
-    resolve: {
-        extensions: ['.ts', '.js'],
-    },
+        resolve: {
+            extensions: ['.ts', '.js'],
+        },
+    };
 };
+
+export default config;
