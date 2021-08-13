@@ -4,9 +4,10 @@
   "description": "",
   "scripts": {
     "clean": "rimraf built/*",
-    "dwtujs:build": "webpack --env name=DLsite-Wishlist-Tool",
-    "dwtujs:dev": "npm run dwtujs:build -- --env dev",
-    "dwtujs:watch": "npm run dwtujs:build -- --watch --env dev",
+    "build": "npm-run-all clean -p build:*",
+    "build:dwtujs": "webpack --env name=DLsite-Wishlist-Tool --analyze",
+    "dev:dwtujs": "npm run dwtujs:build -- --env dev",
+    "watch:dwtujs": "npm run dwtujs:build -- --watch --env dev",
     "tsc:check": "tsc --noEmit",
     "lint": "eslint . --ext .ts"
   },
@@ -20,6 +21,7 @@
     "esbuild-loader": "^2.15.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "8.3.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "2.3.2",
     "rimraf": "^3.0.2",
     "ts-node": "^10.2.0",
