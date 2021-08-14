@@ -2,6 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@types/node': ^16.6.1
+  '@types/tampermonkey': ^4.0.2
   '@typescript-eslint/eslint-plugin': ^4.29.1
   '@typescript-eslint/parser': ^4.29.1
   esbuild-loader: ^2.15.0
@@ -18,6 +19,7 @@ specifiers:
 
 devDependencies:
   '@types/node': 16.6.1
+  '@types/tampermonkey': 4.0.2
   '@typescript-eslint/eslint-plugin': 4.29.1_d4376362794b743c19f4cba25c7fc6f5
   '@typescript-eslint/parser': 4.29.1_eslint@7.32.0+typescript@4.3.5
   esbuild-loader: 2.15.0_webpack@5.50.0
@@ -170,6 +172,10 @@ packages:
 
   /@types/node/16.6.1:
     resolution: {integrity: sha512-Sr7BhXEAer9xyGuCN3Ek9eg9xPviCF2gfu9kTfuU2HkTVAMYSDeX40fvpmo72n5nansg3nsBjuQBrsS28r+NUw==}
+    dev: true
+
+  /@types/tampermonkey/4.0.2:
+    resolution: {integrity: sha512-KMDDTaT3UXDNwYFF2MKAe5s4HsAEZeRw/aidZdEeaddN5sf83wFddG3gF/QYmJ8Cm9YPwAHF65rwNd12DBQw8w==}
     dev: true
 
   /@typescript-eslint/eslint-plugin/4.29.1_d4376362794b743c19f4cba25c7fc6f5:
