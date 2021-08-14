@@ -8,7 +8,7 @@
     "grant": "none",
     "require": "none",
     "downloadURL": "https://kabo2468.github.io/user-css-script/misskey-mfm-helper.user.js",
-    "updateURL": "https://kabo2468.github.io/user-css-script/misskey-mfm-helper.user.js",
+    "updateURL": "https://kabo2468.github.io/user-css-script/misskey-mfm-helper.meta.js",
     "homepageURL": "https://kabo2468.github.io/user-css-script/",
     "supportURL": "https://github.com/kabo2468/user-css-script/issues"
 }
