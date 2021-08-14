@@ -1,0 +1,14 @@
+{
+    "name": "Misskey MFM Helper",
+    "namespace": "kabo2468.mmhujs",
+    "version": "1.0.1",
+    "description": "Help to write MFM",
+    "author": "kabo2468",
+    "match": "https://misskey.io/*",
+    "grant": "none",
+    "require": "none",
+    "downloadURL": "https://kabo2468.github.io/user-css-script/misskey-mfm-helper.user.js",
+    "updateURL": "https://kabo2468.github.io/user-css-script/misskey-mfm-helper.user.js",
+    "homepageURL": "https://kabo2468.github.io/user-css-script/",
+    "supportURL": "https://github.com/kabo2468/user-css-script/issues"
+}
