@@ -1,16 +1,3 @@
-// ==UserScript==
-// @name         Misskey MFM Helper
-// @namespace    kabo2468.mmhujs
-// @version      1.0.0
-// @description  Help to write MFM
-// @author       kabo2468
-// @downloadURL  https://kabo2468.github.io/user-css-script/misskey-mfm-helper.user.js
-// @updateURL    https://kabo2468.github.io/user-css-script/misskey-mfm-helper.user.js
-// @homepageURL  https://kabo2468.github.io/user-css-script/
-// @supportURL   https://github.com/kabo2468/user-css-script/issues
-// @match        https://misskey.io/*
-// ==/UserScript==
-
 const mfm = [
     {
         name: 'リンク',
@@ -156,7 +143,7 @@ const mfm = [
         name: 'レインボー',
         text: '$[rainbow |]',
     },
-];
+] as const;
 
 setInterval(() => {
     const elm = document.querySelectorAll('.gafaadew>header>div');
@@ -212,25 +199,29 @@ function createListDom() {
     div.append(closeDiv, mfmDiv);
 
     div.addEventListener('mousedown', function (e) {
-        let shiftX = e.clientX - div.getBoundingClientRect().left;
-        let shiftY = e.clientY - div.getBoundingClientRect().top;
+        const shiftX = e.clientX - div.getBoundingClientRect().left;
+        const shiftY = e.clientY - div.getBoundingClientRect().top;
 
         move(e.pageX, e.pageY);
 
-        function move(pageX, pageY) {
+        function move(pageX: number, pageY: number) {
             div.style.left = `${pageX - shiftX}px`;
             div.style.top = `${pageY - shiftY}px`;
         }
 
-        function onMousemove(e) {
+        function onMousemove(e: { pageX: number; pageY: number }) {
             move(e.pageX, e.pageY);
         }
 
         document.addEventListener('mousemove', onMousemove);
-        div.addEventListener('mouseup', () => {
-            document.removeEventListener('mousemove', onMousemove);
-            div.removeEventListener('mouseup', this);
-        });
+        div.addEventListener(
+            'mouseup',
+            (() =>
+                function fn() {
+                    document.removeEventListener('mousemove', onMousemove);
+                    div.removeEventListener('mouseup', fn);
+                })()
+        );
     });
     div.addEventListener('dragstart', () => false);
 

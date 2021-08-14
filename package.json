@@ -1,0 +1,40 @@
+{
+  "name": "user-css-script",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "clean": "rimraf built/*",
+    "build": "npm-run-all clean -p build:*",
+    "build:dihujs": "webpack --env name=DLsite-Item-Highlight",
+    "dev:dihujs": "npm run build:dihujs -- --env dev",
+    "watch:dihujs": "npm run build:dihujs -- --watch --env dev",
+    "build:dwtujs": "webpack --env name=DLsite-Wishlist-Tool",
+    "dev:dwtujs": "npm run build:dwtujs -- --env dev",
+    "watch:dwtujs": "npm run build:dwtujs -- --watch --env dev",
+    "build:mmhujs": "webpack --env name=Misskey-MFM-Helper",
+    "dev:mmhujs": "npm run build:mmhujs -- --env dev",
+    "watch:mmhujs": "npm run build:mmhujs -- --watch --env dev",
+    "tsc:check": "tsc --noEmit",
+    "lint": "eslint . --ext .ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^16.6.1",
+    "@types/tampermonkey": "^4.0.2",
+    "@typescript-eslint/eslint-plugin": "^4.29.1",
+    "@typescript-eslint/parser": "^4.29.1",
+    "esbuild-loader": "^2.15.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "8.3.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "2.3.2",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.2.0",
+    "typescript": "^4.3.5",
+    "webpack": "^5.50.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-userscript": "^2.5.8"
+  }
+}
