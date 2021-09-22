@@ -143,6 +143,10 @@ const mfm = [
         name: 'レインボー',
         text: '$[rainbow |]',
     },
+    {
+        name: 'キラキラ',
+        text: '$[sparkle |]',
+    },
 ] as const;
 
 setInterval(() => {
@@ -239,7 +243,9 @@ function createMFMBtnDoms() {
                 const nowCursor = area.selectionStart;
 
                 const barIndex = elm.text.indexOf('|');
-                area.value = `${text.slice(0, nowCursor)}${elm.text.replace('|', '')}${text.slice(nowCursor)}`;
+                area.value = `${text.slice(0, nowCursor)}${elm.text.replace('|', '')}${text.slice(
+                    nowCursor
+                )}`;
 
                 const cursor = nowCursor + barIndex;
                 area.focus();

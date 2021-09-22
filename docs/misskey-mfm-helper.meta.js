@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Misskey MFM Helper
-// @version     1.0.1
+// @version     1.1.0
 // @author      kabo2468
 // @description Help to write MFM
 // @supportURL  https://github.com/kabo2468/user-css-script/issues
