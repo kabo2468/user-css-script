@@ -5,6 +5,9 @@
   "scripts": {
     "clean": "rimraf built/*",
     "build": "npm-run-all clean -p build:*",
+    "build:dctujs": "webpack --env name=DLsite-Coupon-Timer",
+    "dev:dctujs": "npm run build:dctujs -- --env dev",
+    "watch:dctujs": "npm run build:dctujs -- --watch --env dev",
     "build:dihujs": "webpack --env name=DLsite-Item-Highlight",
     "dev:dihujs": "npm run build:dihujs -- --env dev",
     "watch:dihujs": "npm run build:dihujs -- --watch --env dev",
