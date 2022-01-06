@@ -1,0 +1,14 @@
+{
+    "name": "Copy to Coby",
+    "namespace": "kabo2468.ctcujs",
+    "version": "1.0.0",
+    "description": "Copy to Coby",
+    "author": "kabo2468",
+    "match": [
+        "http*://*/*"
+    ],
+    "downloadURL": "https://kabo2468.github.io/user-css-script/copy-to-coby.user.js",
+    "updateURL": "https://kabo2468.github.io/user-css-script/copy-to-coby.meta.js",
+    "homepageURL": "https://kabo2468.github.io/user-css-script/",
+    "supportURL": "https://github.com/kabo2468/user-css-script/issues"
+}

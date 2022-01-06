@@ -17,6 +17,9 @@
     "build:mmhujs": "webpack --env name=Misskey-MFM-Helper",
     "dev:mmhujs": "npm run build:mmhujs -- --env dev",
     "watch:mmhujs": "npm run build:mmhujs -- --watch --env dev",
+    "build:ctcujs": "webpack --env name=Copy-to-Coby",
+    "dev:ctcujs": "npm run build:ctcujs -- --env dev",
+    "watch:ctcujs": "npm run build:ctcujs -- --watch --env dev",
     "tsc:check": "tsc --noEmit",
     "lint": "eslint . --ext .ts"
   },
